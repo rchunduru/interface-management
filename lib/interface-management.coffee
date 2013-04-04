@@ -26,7 +26,7 @@ class interfaces
             return new Error "Unable to fetch MAC address. Error is #{macAddress}" if macAddress instanceof Error
             fileops.createFile "/etc/udev/rules.d/71-cloudflash.rules", (result) =>
                 return new Error  "Unable rename #{oldName} to #{newName}" if result instanceof Error
-                params = "KERNEL==\"#{oldName}\", ACTION==\"add\", ATTR{address}==\"#{macAddress}\", NAME=\"#{newName}\"\n"
+                params = "KERNEL==\"eth*\", ACTION==\"add\", ATTR{address}==\"#{macAddress}\", NAME=\"#{newName}\"\n"
                 fileops.updateFile "/etc/udev/rules.d/71-cloudflash.rules", params
                 exec "ifconfig #{oldName} down"
                 exec "/sbin/udevadm control --reload"
