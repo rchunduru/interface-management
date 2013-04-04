@@ -1,0 +1,19 @@
+{
+  "name": "interface-management",
+  "version": "0.1.0",
+  "dependencies": {
+    "fileops": "0.1.3"
+  },
+  "engines": {
+    "node": "0.8.x"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "author": "Ravi Chunduru",
+  "description": " interface-management provides nodejs implementation to get list of network interfaces, modify the network interface name using udev",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rchunduru/interface-management.git"
+  },
+  "main": "./lib/interface-management"
+}
